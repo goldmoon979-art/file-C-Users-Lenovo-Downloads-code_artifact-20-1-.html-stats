@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Қазақстан үшін экономикалық модель таңдау</title>
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Chart.js for Analytics -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0284c7',
+              600: '#0284c7',
+              700: '#0369a1',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#f1f5f9] text-slate-800 min-h-screen font-sans flex flex-col justify-between selection:bg-sky-500 selection:text-white">
+
+  <!-- NAVIGATION BAR -->
+  <nav class="border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-600 to-indigo-600 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-sky-500/20">
+          <i class="fa-solid fa-chart-pie"></i>
+        </div>
+        <div>
+          <h1 class="font-bold text-lg leading-none text-slate-900">EconVote.kz</h1>
+          <span class="text-xs text-sky-600 font-semibold">Қазақстан Болашағын Таңдау</span>
+        </div>
+      </div>
+      <a href="#stats" class="text-sm font-semibold bg-slate-100 hover:bg-slate-200 text-sky-700 px-4 py-2 rounded-lg border border-slate-200 transition">
+        <i class="fa-solid fa-square-poll-vertical mr-2"></i>Дауыс нәтижесі
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="relative overflow-hidden py-14 px-6 text-center max-w-4xl mx-auto">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-100 border border-sky-200 text-sky-800 text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
+      <i class="fa-solid fa-check-double text-sky-600"></i> Ұлттық Дауыс Беру Платформасы
+    </div>
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
+      Қазақстанда қай экономикалық модель болғанын қалайсыз?
+    </h2>
+    <p class="text-slate-600 text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
+      Төмендегі халықаралық экономикалық жүйелердің сипаттамасымен танысып, еліміздің болашақ өркендеуіне ең тиімді деп санаған модельге өз дауысыңызды беріңіз.
+    </p>
+  </header>
+
+  <!-- MAIN CONTENT: VOTING CARDS -->
+  <main class="max-w-7xl mx-auto px-6 mb-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="modelsGrid">
+
+      <!-- MODEL 1: SWEDISH -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-sky-400 transition-all duration-300 group hover:-translate-y-1">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl font-bold group-hover:scale-110 transition-transform shadow-inner">
+              <i class="fa-solid fa-shield-heart"></i>
+            </span>
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">Социал-демократия</span>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-2">Шведтік модель</h3>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Мемлекеттің жоғары әлеуметтік жауапкершілігі, табысты салықтар арқылы қайта бөлу, тегін медицина мен білім беру кепілдігі.
+          </p>
+          <ul class="text-xs text-slate-700 space-y-2 mb-6 font-medium">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600"></i> Жоғары әлеуметтік қорғау</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600"></i> Табыстар алшақтығының аздығы</li>
+            <li class="flex items-center gap-2 text-slate-500"><i class="fa-solid fa-circle-xmark text-rose-500"></i> Жоғары салық салу (50%+ ЖІӨ)</li>
+          </ul>
+        </div>
+        <button onclick="vote('swedish', event)" class="w-full py-3 px-4 bg-slate-900 hover:bg-emerald-600 text-white font-semibold rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-md">
+          <i class="fa-solid fa-vote-yea"></i> Осы модельге дауыс беру
+        </button>
+      </div>
+
+      <!-- MODEL 2: AMERICAN -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-sky-400 transition-all duration-300 group hover:-translate-y-1">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-2xl font-bold group-hover:scale-110 transition-transform shadow-inner">
+              <i class="fa-solid fa-rocket"></i>
+            </span>
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-100 text-blue-800 border border-blue-200">Либералды Нарық</span>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-2">Американдық модель</h3>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Жеке жеке кәсіпкерлік пен инновацияны барынша қолдау. Мемлекеттің бизнеске минималды араласуы және төмен салықтар.
+          </p>
+          <ul class="text-xs text-slate-700 space-y-2 mb-6 font-medium">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-600"></i> Еркін бәсекелестік & Инновация</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-600"></i> Жоғары еңбек өнімділігі</li>
+            <li class="flex items-center gap-2 text-slate-500"><i class="fa-solid fa-circle-xmark text-rose-500"></i> Әлеуметтік теңсіздік тәуекелі</li>
+          </ul>
+        </div>
+        <button onclick="vote('american', event)" class="w-full py-3 px-4 bg-slate-900 hover:bg-blue-600 text-white font-semibold rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-md">
+          <i class="fa-solid fa-vote-yea"></i> Осы модельге дауыс беру
+        </button>
+      </div>
+
+      <!-- MODEL 3: JAPANESE -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-sky-400 transition-all duration-300 group hover:-translate-y-1">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl font-bold group-hover:scale-110 transition-transform shadow-inner">
+              <i class="fa-solid fa-building-user"></i>
+            </span>
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-100 text-amber-800 border border-amber-200">Корпоративтік</span>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-2">Жапондық модель</h3>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Мемлекет пен бизнестің тығыз ынтымақтастығы, индикативті жоспарлау, корпоративтік мүдде мен ұлттық дәстүрлер үстемдігі.
+          </p>
+          <ul class="text-xs text-slate-700 space-y-2 mb-6 font-medium">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> Стратегиялық мемлекеттік жоспарлау</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> Жоғары экспорттық бәсекелестік</li>
+            <li class="flex items-center gap-2 text-slate-500"><i class="fa-solid fa-circle-xmark text-rose-500"></i> Тұлғалық мүдделердің шектелуі</li>
+          </ul>
+        </div>
+        <button onclick="vote('japanese', event)" class="w-full py-3 px-4 bg-slate-900 hover:bg-amber-600 text-white font-semibold rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-md">
+          <i class="fa-solid fa-vote-yea"></i> Осы модельге дауыс беру
+        </button>
+      </div>
+
+      <!-- MODEL 4: GERMAN -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-sky-400 transition-all duration-300 group hover:-translate-y-1">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-2xl font-bold group-hover:scale-110 transition-transform shadow-inner">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </span>
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-purple-100 text-purple-800 border border-purple-200">Әлеуметтік Нарық</span>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-2">Германдық модель</h3>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Жеке кәсіпкерлік еркіндігі мен мемлекеттің әлеуметтік теңдікті қамтамасыз ету әрі адал бәсекелестікті қорғау кепілі.
+          </p>
+          <ul class="text-xs text-slate-700 space-y-2 mb-6 font-medium">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-600"></i> Нарық пен әділеттілік теңгерімі</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-600"></i> Институционалдық тұрақтылық</li>
+            <li class="flex items-center gap-2 text-slate-500"><i class="fa-solid fa-circle-xmark text-rose-500"></i> Қатаң заңнамалық реттеу</li>
+          </ul>
+        </div>
+        <button onclick="vote('german', event)" class="w-full py-3 px-4 bg-slate-900 hover:bg-purple-600 text-white font-semibold rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-md">
+          <i class="fa-solid fa-vote-yea"></i> Осы модельге дауыс беру
+        </button>
+      </div>
+
+      <!-- MODEL 5: KAZAKH MIXED / MODERN -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-sky-400 transition-all duration-300 group hover:-translate-y-1 lg:col-span-2">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="w-12 h-12 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-2xl font-bold group-hover:scale-110 transition-transform shadow-inner">
+              <i class="fa-solid fa-sun"></i>
+            </span>
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-sky-100 text-sky-800 border border-sky-200">Ұлттық Гибридті</span>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-2">Арнайы Қазақстандық Модель (Инновациялық-Аралас)</h3>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Шикізаттық тәуелділіктен арылған, IT, өңдеуші өнеркәсіп пен шағын бизнесті қолдайтын, шведтік әлеуметтік кепілдіктер мен американдық инновацияны ұштастырған жеке ұлттық жол.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <ul class="text-xs text-slate-700 space-y-2 font-medium">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sky-600"></i> Экономиканы диверсификациялау</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sky-600"></i> Адам капиталын және білімді қолдау</li>
+            </ul>
+            <ul class="text-xs text-slate-700 space-y-2 font-medium">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sky-600"></i> Квазимемлекеттік секторды азайту</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sky-600"></i> ШОБ салықтық жеңілдіктері</li>
+            </ul>
+          </div>
+        </div>
+        <button onclick="vote('kazakh', event)" class="w-full py-3 px-4 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-xl shadow-lg shadow-sky-600/20 transition-all duration-200 flex items-center justify-center gap-2">
+          <i class="fa-solid fa-vote-yea"></i> Осы модельге дауыс беру
+        </button>
+      </div>
+
+    </div>
+
+    <!-- LIVE STATS / CHART SECTION -->
+    <section id="stats" class="mt-16 bg-white border border-slate-200 rounded-3xl p-8 md:p-12 shadow-sm">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+        <div>
+          <span class="text-sky-600 text-xs font-bold uppercase tracking-widest">Нақты уақыттағы аналитика</span>
+          <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900">Дауыс Беру Нәтижесі</h3>
+        </div>
+        <div class="bg-slate-100 border border-slate-200 px-4 py-2 rounded-xl text-sm font-semibold text-slate-700">
+          Жалпы дауыс саны: <span id="totalVotes" class="text-sky-600 font-bold text-lg">0</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+        <!-- CHART -->
+        <div class="lg:col-span-2 h-72 flex items-center justify-center">
+          <canvas id="voteChart"></canvas>
+        </div>
+        <!-- PERCENTAGE BREAKDOWN -->
+        <div class="space-y-3" id="breakdown">
+          <!-- Dynamically populated via JavaScript -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200 bg-white py-8 px-6 text-center text-slate-500 text-sm">
+    <p>© 2026 EconVote Kazakhstan. Барлық құқықтар қорғалған. Satbayev University зерттеу жобасы.</p>
+  </footer>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Initial Voting State Data
+    const voteData = {
+      swedish: 45,
+      american: 30,
+      japanese: 20,
+      german: 35,
+      kazakh: 70
+    };
+
+    const modelNames = {
+      swedish: 'Шведтік модель',
+      american: 'Американдық модель',
+      japanese: 'Жапондық модель',
+      german: 'Германдық модель',
+      kazakh: 'Арнайы Қазақстандық'
+    };
+
+    const modelColors = {
+      swedish: '#10b981',
+      american: '#2563eb',
+      japanese: '#f59e0b',
+      german: '#9333ea',
+      kazakh: '#0284c7'
+    };
+
+    let chartInstance = null;
+
+    function getTotalVotes() {
+      return Object.values(voteData).reduce((a, b) => a + b, 0);
+    }
+
+    function initChart() {
+      const ctx = document.getElementById('voteChart').getContext('2d');
+      chartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: Object.keys(voteData).map(k => modelNames[k]),
+          datasets: [{
+            label: 'Дауыс саны',
+            data: Object.values(voteData),
+            backgroundColor: Object.keys(voteData).map(k => modelColors[k]),
+            borderRadius: 8,
+            borderSkipped: false,
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#1e293b',
+              titleFont: { family: 'Plus Jakarta Sans', size: 14, weight: 'bold' },
+              bodyFont: { family: 'Plus Jakarta Sans', size: 13 },
+              padding: 12,
+              borderColor: '#e2e8f0',
+              borderWidth: 1
+            }
+          },
+          scales: {
+            x: {
+              grid: { display: false },
+              ticks: { color: '#64748b', font: { family: 'Plus Jakarta Sans', size: 12, weight: '600' } }
+            },
+            y: {
+              grid: { color: '#e2e8f0' },
+              ticks: { color: '#64748b', font: { family: 'Plus Jakarta Sans' } }
+            }
+          }
+        }
+      });
+      updateBreakdown();
+    }
+
+    function updateBreakdown() {
+      const total = getTotalVotes();
+      document.getElementById('totalVotes').innerText = total;
+
+      const breakdownEl = document.getElementById('breakdown');
+      breakdownEl.innerHTML = '';
+
+      Object.keys(voteData).forEach(key => {
+        const votes = voteData[key];
+        const percent = total > 0 ? ((votes / total) * 100).toFixed(1) : 0;
+
+        const item = document.createElement('div');
+        item.className = 'bg-slate-50 border border-slate-200 p-3 rounded-xl flex items-center justify-between shadow-sm';
+        item.innerHTML = `
+          <div class="flex items-center gap-3">
+            <span class="w-3.5 h-3.5 rounded-full" style="background-color: ${modelColors[key]}"></span>
+            <span class="text-xs font-semibold text-slate-800">${modelNames[key]}</span>
+          </div>
+          <div class="text-right">
+            <span class="text-sm font-extrabold text-slate-900">${percent}%</span>
+            <span class="text-xs text-slate-500 ml-1">(${votes})</span>
+          </div>
+        `;
+        breakdownEl.appendChild(item);
+      });
+    }
+
+    function vote(modelKey, evt) {
+      voteData[modelKey] += 1;
+      
+      // Update Chart & UI
+      chartInstance.data.datasets[0].data = Object.values(voteData);
+      chartInstance.update();
+      updateBreakdown();
+
+      // Button Feedback Animation
+      const btn = evt ? evt.currentTarget : event.currentTarget;
+      const originalText = btn.innerHTML;
+      btn.innerHTML = `<i class="fa-solid fa-check"></i> Дауысыңыз қабылданды!`;
+      btn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
+      
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
+      }, 2000);
+    }
+
+    // Start application on page load
+    window.onload = initChart;
+  </script>
+</body>
+</html>
